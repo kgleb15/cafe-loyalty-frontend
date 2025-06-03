@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регистрация - Система лояльности кафе</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>Система лояльности кафе</h1>
+    </div>
+  </header>
+  
+  <div class="container">
+    <div class="card">
+      <h2>Регистрация</h2>
+      <form id="registerForm">
+        <div class="form-group">
+          <label for="name">Имя</label>
+          <input type="text" id="name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="password">Пароль</label>
+          <input type="password" id="password" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="confirmPassword">Подтверждение пароля</label>
+          <input type="password" id="confirmPassword" required>
+        </div>
+        
+        <div class="error hidden" id="registerError"></div>
+        <div class="success hidden" id="registerSuccess"></div>
+        
+        <button type="submit">Зарегистрироваться</button>
+      </form>
+      
+      <a href="login.html" class="link">Уже есть аккаунт? Войти</a>
+    </div>
+  </div>
+  
+  <script src="scripts.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>

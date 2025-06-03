@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Личный кабинет - Система лояльности кафе</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>Система лояльности кафе</h1>
+    </div>
+  </header>
+  
+  <div class="container">
+    <div class="card dashboard-card">
+      <h2>Личный кабинет</h2>
+      <p>Добро пожаловать, <span id="userName">Пользователь</span>!</p>
+      
+      <h3>Ваш баланс баллов:</h3>
+      <div class="balance" id="userBalance">0</div>
+      
+      <h3>Ваш QR-код:</h3>
+      <div class="qr-code" id="qrCode"></div>
+      
+      <button class="logout-btn" onclick="logout()">Выйти из системы</button>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+  <script src="scripts.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

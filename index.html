@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Система лояльности кафе</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .welcome-card {
+      text-align: center;
+      padding: 50px 30px;
+    }
+    
+    .welcome-card h2 {
+      margin-bottom: 20px;
+      color: #4a154b;
+    }
+    
+    .welcome-card p {
+      margin-bottom: 30px;
+      font-size: 18px;
+    }
+    
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    
+    .button-group button {
+      width: auto;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>Система лояльности кафе</h1>
+    </div>
+  </header>
+  
+  <div class="container">
+    <div class="card welcome-card">
+      <h2>Добро пожаловать в систему лояльности!</h2>
+      <p>Накапливайте баллы за каждый заказ и получайте приятные бонусы</p>
+      
+      <div class="button-group">
+        <button onclick="window.location.href='login.html'">Войти</button>
+        <button onclick="window.location.href='register.html'">Зарегистрироваться</button>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    // Проверяем, авторизован ли пользователь
+    document.addEventListener('DOMContentLoaded', function() {
+      const token = localStorage.getItem('token');
+      if (token) {
+        // Если пользователь авторизован, перенаправляем в личный кабинет
+        window.location.href = 'dashboard.html';
+      }
+    });
+  </script>
+</body>
+</html>
