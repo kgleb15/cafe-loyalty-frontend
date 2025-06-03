@@ -30,25 +30,24 @@ document.addEventListener('DOMContentLoaded', async function() {
 function generateQRCode(userData) {
   const qrCodeElement = document.getElementById('qrCode');
   
-  // Создаем данные для QR-кода (ID пользователя и токен)
-  const user = JSON.parse(localStorage.getItem('user'));
+  // Очищаем элемент перед генерацией нового QR-кода
+  qrCodeElement.innerHTML = '';
+  
+  // Создаем данные для QR-кода (ID пользователя и имя)
+  const user = JSON.parse(localStorage.getItem('user')) || { id: 'unknown' };
   const qrData = JSON.stringify({
     userId: user.id,
     name: userData.name,
-    token: localStorage.getItem('token').substring(0, 10) + '...' // Для безопасности берем только часть токена
+    email: userData.email
   });
   
-  // Генерируем QR-код
-  QRCode.toCanvas(qrCodeElement, qrData, {
-    width: 250,
-    margin: 1,
-    color: {
-      dark: '#4a154b',
-      light: '#ffffff'
-    }
-  }, function(error) {
-    if (error) {
-      console.error('Ошибка при генерации QR-кода:', error);
-    }
+  // Генерируем QR-код с помощью библиотеки qrcode.js
+  new QRCode(qrCodeElement, {
+    text: qrData,
+    width: 200,
+    height: 200,
+    colorDark: '#4a154b',
+    colorLight: '#ffffff',
+    correctLevel: QRCode.CorrectLevel.H
   });
 }
